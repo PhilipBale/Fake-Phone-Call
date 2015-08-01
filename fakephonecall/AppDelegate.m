@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RLMRealm.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
+    
+    NSURL *realmDirectoy = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.logikcomputing.fakephonecall"];
+    NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"db.realm"];
+    [RLMRealm setDefaultRealmPath:realmPath];
     return YES;
 }
 

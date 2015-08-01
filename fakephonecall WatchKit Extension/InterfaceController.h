@@ -11,4 +11,6 @@
 
 @interface InterfaceController : WKInterfaceController
 
+@property (weak, nonatomic) IBOutlet WKInterfaceTable *contactsTable;
+
 @end

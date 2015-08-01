@@ -8,6 +8,10 @@ target 'fakephonecall' do
 	pod 'SWTableViewCell'
 end
 
+target 'fakephonecall WatchKit Extension' do
+	pod 'Realm'
+end
+
 target 'fakephonecallTests' do
 	pod 'AFNetworking'
 	pod 'JTObjectMapping'

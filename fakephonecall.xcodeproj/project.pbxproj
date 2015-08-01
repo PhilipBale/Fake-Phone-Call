@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52A57627B1F1431E7AE3775F /* libPods-fakephonecallTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */; };
+		75442D343971BDD38160862A /* libPods-fakephonecall WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2092619C26EF5859B339B6B5 /* libPods-fakephonecall WatchKit Extension.a */; };
 		BCEB7300C998489F692006A3 /* libPods-fakephonecall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */; };
 		D447DEA31B6B341E0088D931 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA21B6B341E0088D931 /* main.m */; };
 		D447DEA61B6B341E0088D931 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA51B6B341E0088D931 /* AppDelegate.m */; };
@@ -30,6 +31,10 @@
 		D4DDB7831B6D6D49009D95C4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7811B6D6D49009D95C4 /* Interface.storyboard */; };
 		D4DDB7851B6D6D49009D95C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7841B6D6D49009D95C4 /* Images.xcassets */; };
 		D4DDB7881B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4DDB7921B6D7FF1009D95C4 /* ContactsTableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7911B6D7FF1009D95C4 /* ContactsTableRowController.m */; };
+		D4DDB7951B6D87B3009D95C4 /* FPCContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7631B6D5414009D95C4 /* FPCContact.m */; };
+		D4DDB7981B6D8CBC009D95C4 /* CallOptionsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7971B6D8CBC009D95C4 /* CallOptionsInterfaceController.m */; };
+		D4DDB79B1B6D8E53009D95C4 /* CallOptionsRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2092619C26EF5859B339B6B5 /* libPods-fakephonecall WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fakephonecall WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39605AB56E95A1C5ADCF2C97 /* Pods-fakephonecall WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		685A7714DC98E37052C57193 /* Pods-fakephonecallTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fakephonecall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fakephonecallTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +118,15 @@
 		D4DDB7801B6D6D49009D95C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4DDB7821B6D6D49009D95C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D4DDB7841B6D6D49009D95C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4DDB7901B6D7FF1009D95C4 /* ContactsTableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableRowController.h; sourceTree = "<group>"; };
+		D4DDB7911B6D7FF1009D95C4 /* ContactsTableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableRowController.m; sourceTree = "<group>"; };
+		D4DDB7931B6D84D3009D95C4 /* fakephonecall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fakephonecall.entitlements; sourceTree = "<group>"; };
+		D4DDB7941B6D850B009D95C4 /* fakephonecall WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "fakephonecall WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		D4DDB7961B6D8CBC009D95C4 /* CallOptionsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOptionsInterfaceController.h; sourceTree = "<group>"; };
+		D4DDB7971B6D8CBC009D95C4 /* CallOptionsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOptionsInterfaceController.m; sourceTree = "<group>"; };
+		D4DDB7991B6D8E53009D95C4 /* CallOptionsRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOptionsRowController.h; sourceTree = "<group>"; };
+		D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOptionsRowController.m; sourceTree = "<group>"; };
+		EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.release.xcconfig"; sourceTree = "<group>"; };
 		FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75442D343971BDD38160862A /* libPods-fakephonecall WatchKit Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +168,7 @@
 				D4DDB7531B6B5DA6009D95C4 /* AddressBookUI.framework */,
 				6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */,
 				6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */,
+				2092619C26EF5859B339B6B5 /* libPods-fakephonecall WatchKit Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +180,8 @@
 				FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */,
 				685A7714DC98E37052C57193 /* Pods-fakephonecallTests.debug.xcconfig */,
 				FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */,
+				39605AB56E95A1C5ADCF2C97 /* Pods-fakephonecall WatchKit Extension.debug.xcconfig */,
+				EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -193,6 +213,7 @@
 		D447DE9F1B6B341E0088D931 /* fakephonecall */ = {
 			isa = PBXGroup;
 			children = (
+				D4DDB7931B6D84D3009D95C4 /* fakephonecall.entitlements */,
 				D4DDB75E1B6D52D0009D95C4 /* Models */,
 				D4DDB74A1B6B3C3D009D95C4 /* UI */,
 				D447DEA41B6B341E0088D931 /* AppDelegate.h */,
@@ -278,9 +299,16 @@
 		D4DDB7701B6D6D49009D95C4 /* fakephonecall WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D4DDB7961B6D8CBC009D95C4 /* CallOptionsInterfaceController.h */,
+				D4DDB7971B6D8CBC009D95C4 /* CallOptionsInterfaceController.m */,
+				D4DDB7991B6D8E53009D95C4 /* CallOptionsRowController.h */,
+				D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */,
+				D4DDB7901B6D7FF1009D95C4 /* ContactsTableRowController.h */,
+				D4DDB7911B6D7FF1009D95C4 /* ContactsTableRowController.m */,
+				D4DDB7941B6D850B009D95C4 /* fakephonecall WatchKit Extension.entitlements */,
+				D4DDB7761B6D6D49009D95C4 /* Images.xcassets */,
 				D4DDB7731B6D6D49009D95C4 /* InterfaceController.h */,
 				D4DDB7741B6D6D49009D95C4 /* InterfaceController.m */,
-				D4DDB7761B6D6D49009D95C4 /* Images.xcassets */,
 				D4DDB7711B6D6D49009D95C4 /* Supporting Files */,
 			);
 			path = "fakephonecall WatchKit Extension";
@@ -360,9 +388,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4DDB78C1B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit Extension" */;
 			buildPhases = (
+				19FEABA01BC483F2A9853477 /* Check Pods Manifest.lock */,
 				D4DDB76B1B6D6D49009D95C4 /* Sources */,
 				D4DDB76C1B6D6D49009D95C4 /* Frameworks */,
 				D4DDB76D1B6D6D49009D95C4 /* Resources */,
+				981ED1C360946A826271D7C3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,6 +430,12 @@
 				TargetAttributes = {
 					D447DE9C1B6B341E0088D931 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 9525LJ6YEJ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D447DEB51B6B341E0088D931 = {
 						CreatedOnToolsVersion = 6.4;
@@ -407,6 +443,12 @@
 					};
 					D4DDB76E1B6D6D49009D95C4 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 9525LJ6YEJ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D4DDB7791B6D6D49009D95C4 = {
 						CreatedOnToolsVersion = 6.4;
@@ -473,6 +515,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		19FEABA01BC483F2A9853477 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		671EB99C32B090768C07E554 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +558,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		981ED1C360946A826271D7C3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4286D14F306DCD62F2014E5 /* Check Pods Manifest.lock */ = {
@@ -564,6 +636,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DDB79B1B6D8E53009D95C4 /* CallOptionsRowController.m in Sources */,
+				D4DDB7981B6D8CBC009D95C4 /* CallOptionsInterfaceController.m in Sources */,
+				D4DDB7921B6D7FF1009D95C4 /* ContactsTableRowController.m in Sources */,
+				D4DDB7951B6D87B3009D95C4 /* FPCContact.m in Sources */,
 				D4DDB7751B6D6D49009D95C4 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,9 +779,13 @@
 			baseConfigurationReference = A2BE3F90C22D2336F169F0CD /* Pods-fakephonecall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fakephonecall/fakephonecall.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fakephonecall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -714,9 +794,13 @@
 			baseConfigurationReference = FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fakephonecall/fakephonecall.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fakephonecall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -790,7 +874,11 @@
 		};
 		D4DDB78D1B6D6D49009D95C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39605AB56E95A1C5ADCF2C97 /* Pods-fakephonecall WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "fakephonecall WatchKit Extension/fakephonecall WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -798,16 +886,22 @@
 				INFOPLIST_FILE = "fakephonecall WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		D4DDB78E1B6D6D49009D95C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "fakephonecall WatchKit Extension/fakephonecall WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "fakephonecall WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -849,6 +943,7 @@
 				D4DDB78B1B6D6D49009D95C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4DDB78C1B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -857,6 +952,7 @@
 				D4DDB78E1B6D6D49009D95C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

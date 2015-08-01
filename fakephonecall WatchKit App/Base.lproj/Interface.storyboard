@@ -12,19 +12,56 @@
                     <items>
                         <table alignment="left" id="Htp-Vc-zG8">
                             <items>
-                                <tableRow id="hDJ-06-Zlh">
+                                <tableRow identifier="ContactsTableRowController" id="hDJ-06-Zlh" customClass="ContactsTableRowController">
                                     <group key="rootItem" width="1" alignment="left" id="eC3-IZ-V2F">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" accessibilityLabel="Contact Name" text="Contact Name" textAlignment="left" id="Esg-rN-zTL"/>
                                         </items>
+                                        <color key="backgroundColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
+                                    <connections>
+                                        <outlet property="contactNameLabel" destination="Esg-rN-zTL" id="o1Y-3w-jH5"/>
+                                    </connections>
                                 </tableRow>
                             </items>
-                            <color key="backgroundColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="contactsTable" destination="Htp-Vc-zG8" id="GSM-in-yXL"/>
+                    </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="411" y="505"/>
+        </scene>
+        <!--Call Options-->
+        <scene sceneID="K13-sb-wNf">
+            <objects>
+                <controller identifier="Call Options" title="Call Options" id="Qsd-CX-mjf" customClass="CallOptionsInterfaceController">
+                    <items>
+                        <table alignment="left" id="IHq-Fz-ret">
+                            <items>
+                                <tableRow identifier="CallOptionsRowController" id="Hqc-4s-pQM" customClass="CallOptionsRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="iWX-b1-7ru">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Now" id="zTI-hK-Har">
+                                                <color key="textColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="whenLabel" destination="zTI-hK-Har" id="Uad-VX-LhJ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="optionsTable" destination="IHq-Fz-ret" id="hYn-e1-7Rr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="686" y="505"/>
         </scene>
     </scenes>
 </document>
