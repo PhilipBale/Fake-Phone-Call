@@ -51,6 +51,7 @@
 -(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex
 {
     NSLog(@"Calling in %@ secs", [callOptionsValues objectAtIndex:rowIndex]);
+    [self presentControllerWithName:@"CallResult" context:nil];
 }
 @end
 

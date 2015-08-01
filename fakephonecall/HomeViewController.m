@@ -31,7 +31,7 @@
 
 @end
 
-#define callOptions @[@0, @30, @60, @300]
+#define callOptions @[@0, @15, @30, @60, @300]
 
 @implementation HomeViewController
 
@@ -81,7 +81,7 @@
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
+                                                    otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 15 sec", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
     self.toCallCachedNumber = contact.number;
     [self.callActionSheet showInView:self.view];
 }
