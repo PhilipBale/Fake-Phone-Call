@@ -7,12 +7,21 @@
 //
 
 #import "HomeViewController.h"
-
+#import "Realm/Realm.h"
+#import "FPCUser.h"
+#import "FPCContact.h"
+#import "ContactCell.h"
+#import "GeneralUtilities.h"
 
 @interface HomeViewController ()
+
 @property (nonatomic, strong) NSArray *cachedNumberArray;
+@property (nonatomic, strong) NSArray *cachedLabelArray;
+
 @property (nonatomic, strong) NSString *cachedName;
 @property (nonatomic, strong) UIActionSheet *cachedActionSheet;
+@property NSMutableArray* contacts;
+
 @end
 
 @implementation HomeViewController
@@ -25,6 +34,8 @@
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     //UIView *navBottomBorder = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     //[navBottomBorder removeFromSuperview];
+    
+    [self updateContacts];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,14 +45,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"Contact Name";
-    cell.detailTextLabel.text = @"Phone Number";
+    ContactCell *cell = (ContactCell *)[tableView dequeueReusableCellWithIdentifier:@"contactCell" forIndexPath:indexPath];
+    FPCContact *contact = [self.contacts objectAtIndex:indexPath.row];
+    cell.delegate = self;
+    cell.textLabel.text = contact.name;
+    cell.detailTextLabel.text = contact.number;
+    cell.contactId = contact.contactId;
     return cell;
     
 }
@@ -86,6 +100,19 @@
 - (void)saveContactWithName:(NSString *)name number:(NSString*)number
 {
     NSLog(@"Saving contact with name: %@, number: %@", name, number);
+    FPCContact *contact = [[FPCContact alloc] init];
+    contact.name = name;
+    contact.number = number;
+    NSString *idHash = [NSString stringWithFormat: @"%@ %@", name, number];
+    contact.contactId = [idHash hash];
+    
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    {
+        [FPCContact createOrUpdateInDefaultRealmWithValue:contact];
+    }
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+    [self updateContacts];
+    [self.tableView reloadData];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -93,6 +120,12 @@
     if (actionSheet == self.cachedActionSheet)
     {
         NSString *number = [self.cachedNumberArray objectAtIndex:buttonIndex - 1];
+        NSString *label = [self.cachedLabelArray objectAtIndex:buttonIndex - 1];
+        if (label.length > 0 && ![label isEqualToString:@"()"])
+        {
+            self.cachedName = [NSString stringWithFormat:@"%@ %@", self.cachedName, label];
+        }
+        
         [self saveContactWithName:self.cachedName number:number];
         return;
     }
@@ -136,11 +169,12 @@
 {
     CFStringRef firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
     CFStringRef lastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
-    NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    NSString *fullName = [NSString stringWithFormat:@"%@, %@", lastName, firstName];
     
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
     if (phoneNumbers) {
         NSMutableArray *allNumbers = [[NSMutableArray alloc] init];
+        NSMutableArray *allLabels = [[NSMutableArray alloc] init];
         NSMutableArray *actionSheetNumbersArray = [[NSMutableArray alloc] init];
         
         CFIndex numberOfPhoneNumbers = ABMultiValueGetCount(phoneNumbers);
@@ -149,8 +183,10 @@
             CFStringRef phoneNumberLabelRef = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
             NSString *phoneNumber = [NSString stringWithFormat:@"%@", phoneNumberRef];
             NSString *phoneNumberLabel  = [[[NSString stringWithFormat:@"%@: ", phoneNumberLabelRef] stringByReplacingOccurrencesOfString:@"_$!<" withString:@""] stringByReplacingOccurrencesOfString:@">!$_" withString:@""];
+            NSString *phoneNumberLabelFinal  = [[[NSString stringWithFormat:@"(%@)", phoneNumberLabelRef] stringByReplacingOccurrencesOfString:@"_$!<" withString:@""] stringByReplacingOccurrencesOfString:@">!$_" withString:@""];
             
             [allNumbers addObject:phoneNumber];
+            [allLabels addObject:phoneNumberLabelFinal];
             [actionSheetNumbersArray addObject:[NSString stringWithFormat:@"%@%@", phoneNumberLabel, phoneNumber]];
             NSLog(@"Phone number selected:%@", [actionSheetNumbersArray lastObject]);
             
@@ -162,6 +198,7 @@
         if (numberOfPhoneNumbers > 1)
         {
             self.cachedNumberArray = allNumbers;
+            self.cachedLabelArray = allLabels;
             self.cachedName = fullName;
             UIActionSheet *numberSelectSheet = [[UIActionSheet alloc] initWithTitle:@"Select Phone Number" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil, nil];
             for (NSString *numberLabel in actionSheetNumbersArray)
@@ -200,6 +237,37 @@
     [alertController addAction:cancelAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)swipeableTableViewCell:(ContactCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+        {
+            NSLog(@"Removing %i", cell.contactId);
+            NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
+            FPCContact *toRemove = [self.contacts objectAtIndex:cellIndexPath.item];
+            
+            [[RLMRealm defaultRealm] beginWriteTransaction];
+            {
+                [[RLMRealm defaultRealm] deleteObject:toRemove];
+            }
+            [[RLMRealm defaultRealm] commitWriteTransaction];
+            [self.contacts removeObjectAtIndex:cellIndexPath.item];
+            [self.tableView deleteRowsAtIndexPaths:@[cellIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+            break;
+    }
+}
+
+- (void)updateContacts
+{
+    self.contacts = [GeneralUtilities mutableArrayFromRealmResults:[[FPCContact allObjects] sortedResultsUsingProperty:@"name" ascending:YES]];
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+{
+    return YES;
 }
 
 @end

@@ -50,11 +50,11 @@
                                     <action selector="callsRemainingButtonPressed:" destination="Znr-br-aZm" eventType="touchUpInside" id="xhj-gH-WSd"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hHZ-gT-HZi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hHZ-gT-HZi">
                                 <rect key="frame" x="0.0" y="94" width="320" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" textLabel="Mjq-du-ByV" detailTextLabel="ICI-jx-zU1" rowHeight="67" style="IBUITableViewCellStyleValue1" id="vQy-di-29F">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" textLabel="Mjq-du-ByV" detailTextLabel="ICI-jx-zU1" rowHeight="60" style="IBUITableViewCellStyleValue1" id="vQy-di-29F" customClass="ContactCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vQy-di-29F" id="VAE-ae-ISx">
                                             <autoresizingMask key="autoresizingMask"/>

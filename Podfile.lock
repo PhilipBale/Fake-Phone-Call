@@ -24,15 +24,18 @@ PODS:
   - Realm (0.94.0):
     - Realm/Headers (= 0.94.0)
   - Realm/Headers (0.94.0)
+  - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking
   - JTObjectMapping
   - Realm
+  - SWTableViewCell
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JTObjectMapping: 179cae6acadb27be5b7f5c019c216cb99d28e112
   Realm: a046149653e0ca220b65b5783da907aa5b74d86c
+  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
 COCOAPODS: 0.37.2
