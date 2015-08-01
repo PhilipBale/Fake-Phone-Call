@@ -12,6 +12,7 @@
 #import "FPCContact.h"
 #import "ContactCell.h"
 #import "GeneralUtilities.h"
+#import "CallManager.h"
 
 @interface HomeViewController ()
 
@@ -19,10 +20,18 @@
 @property (nonatomic, strong) NSArray *cachedLabelArray;
 
 @property (nonatomic, strong) NSString *cachedName;
+@property (nonatomic, strong) NSString *toCallCachedNumber;
+
 @property (nonatomic, strong) UIActionSheet *cachedActionSheet;
+@property (nonatomic, strong) UIActionSheet *callActionSheet;
+
+@property (nonatomic, strong) FPCUser *testUser;
+
 @property NSMutableArray* contacts;
 
 @end
+
+#define callOptions @[@0, @30, @60, @300]
 
 @implementation HomeViewController
 
@@ -34,6 +43,11 @@
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     //UIView *navBottomBorder = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     //[navBottomBorder removeFromSuperview];
+    
+    self.testUser = [[FPCUser alloc] init];
+    self.testUser.callsRemaining = 5;
+    self.testUser.callsPlaced = 0;
+    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%i calls remaining", self.testUser.callsRemaining] forState:UIControlStateNormal];
     
     [self updateContacts];
 }
@@ -57,7 +71,19 @@
     cell.detailTextLabel.text = contact.number;
     cell.contactId = contact.contactId;
     return cell;
-    
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FPCContact *contact = [self.contacts objectAtIndex:indexPath.row];
+    NSString *subject = [NSString stringWithFormat:@"Call %@", [self shortenedNameForContact:contact] ];
+    self.callActionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
+    self.toCallCachedNumber = contact.number;
+    [self.callActionSheet showInView:self.view];
 }
 
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
@@ -128,6 +154,17 @@
         
         [self saveContactWithName:self.cachedName number:number];
         return;
+    } else if (actionSheet == self.callActionSheet)
+    {
+        if (buttonIndex >= [callOptions count]) return;
+        NSInteger when = [[callOptions objectAtIndex:buttonIndex] integerValue];
+        NSLog(@"Placing call in %i secs", when);
+        [[CallManager sharedManager] placeCallForUser:nil toNumber:self.toCallCachedNumber when:when success:^(BOOL success){
+            __weak typeof(self) weakSelf = self;
+            [weakSelf callPlacedSuccess:success];
+        }];
+        
+         return;
     }
     switch (buttonIndex) {
         case 0:
@@ -139,6 +176,13 @@
             break;
         default:
             break;
+    }
+}
+
+- (void)callPlacedSuccess:(BOOL)success
+{
+    if (success) {
+        NSLog(@"Call placed");
     }
 }
 
@@ -257,6 +301,17 @@
                                   withRowAnimation:UITableViewRowAnimationAutomatic];
         }
             break;
+    }
+}
+
+- (NSString *)shortenedNameForContact:(FPCContact *)contact
+{
+    NSArray *split = [contact.name componentsSeparatedByString:@" "];
+    if (split.count == 3)
+    {
+        return [split objectAtIndex:1];
+    } else {
+        return [((NSString *)[split objectAtIndex:0]) stringByReplacingOccurrencesOfString:@"," withString:@""];
     }
 }
 

@@ -23,6 +23,13 @@
 		D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7601B6D52EC009D95C4 /* FPCUser.m */; };
 		D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7631B6D5414009D95C4 /* FPCContact.m */; };
 		D4DDB7671B6D5E23009D95C4 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */; };
+		D4DDB76A1B6D6626009D95C4 /* CallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7691B6D6626009D95C4 /* CallManager.m */; };
+		D4DDB7751B6D6D49009D95C4 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7741B6D6D49009D95C4 /* InterfaceController.m */; };
+		D4DDB7771B6D6D49009D95C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7761B6D6D49009D95C4 /* Images.xcassets */; };
+		D4DDB77B1B6D6D49009D95C4 /* fakephonecall WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB77A1B6D6D49009D95C4 /* fakephonecall WatchKit App.app */; };
+		D4DDB7831B6D6D49009D95C4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7811B6D6D49009D95C4 /* Interface.storyboard */; };
+		D4DDB7851B6D6D49009D95C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7841B6D6D49009D95C4 /* Images.xcassets */; };
+		D4DDB7881B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +40,35 @@
 			remoteGlobalIDString = D447DE9C1B6B341E0088D931;
 			remoteInfo = fakephonecall;
 		};
+		D4DDB77C1B6D6D49009D95C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D447DE951B6B341E0088D931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4DDB7791B6D6D49009D95C4;
+			remoteInfo = "fakephonecall WatchKit App";
+		};
+		D4DDB7861B6D6D49009D95C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D447DE951B6B341E0088D931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4DDB76E1B6D6D49009D95C4;
+			remoteInfo = "fakephonecall WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4DDB78F1B6D6D49009D95C4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D4DDB7881B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		685A7714DC98E37052C57193 /* Pods-fakephonecallTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +100,17 @@
 		D4DDB7631B6D5414009D95C4 /* FPCContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCContact.m; sourceTree = "<group>"; };
 		D4DDB7651B6D5E23009D95C4 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
 		D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtilities.m; sourceTree = "<group>"; };
+		D4DDB7681B6D6626009D95C4 /* CallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallManager.h; sourceTree = "<group>"; };
+		D4DDB7691B6D6626009D95C4 /* CallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallManager.m; sourceTree = "<group>"; };
+		D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "fakephonecall WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DDB7721B6D6D49009D95C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4DDB7731B6D6D49009D95C4 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		D4DDB7741B6D6D49009D95C4 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		D4DDB7761B6D6D49009D95C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4DDB77A1B6D6D49009D95C4 /* fakephonecall WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fakephonecall WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DDB7801B6D6D49009D95C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4DDB7821B6D6D49009D95C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D4DDB7841B6D6D49009D95C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.release.xcconfig"; sourceTree = "<group>"; };
 		FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +131,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A57627B1F1431E7AE3775F /* libPods-fakephonecallTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDB76C1B6D6D49009D95C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,10 +170,12 @@
 			isa = PBXGroup;
 			children = (
 				D447DE9F1B6B341E0088D931 /* fakephonecall */,
+				D4DDB77E1B6D6D49009D95C4 /* fakephonecall WatchKit App */,
+				D4DDB7701B6D6D49009D95C4 /* fakephonecall WatchKit Extension */,
 				D447DEB91B6B341E0088D931 /* fakephonecallTests */,
-				D447DE9E1B6B341E0088D931 /* Products */,
-				C993B569D859F657E259FBA5 /* Pods */,
 				B2A688BEEDAA5E712335D9CD /* Frameworks */,
+				C993B569D859F657E259FBA5 /* Pods */,
+				D447DE9E1B6B341E0088D931 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +184,8 @@
 			children = (
 				D447DE9D1B6B341E0088D931 /* fakephonecall.app */,
 				D447DEB61B6B341E0088D931 /* fakephonecallTests.xctest */,
+				D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */,
+				D4DDB77A1B6D6D49009D95C4 /* fakephonecall WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +201,8 @@
 				D447DEA01B6B341E0088D931 /* Supporting Files */,
 				D4DDB7651B6D5E23009D95C4 /* GeneralUtilities.h */,
 				D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */,
+				D4DDB7681B6D6626009D95C4 /* CallManager.h */,
+				D4DDB7691B6D6626009D95C4 /* CallManager.m */,
 			);
 			path = fakephonecall;
 			sourceTree = "<group>";
@@ -216,6 +275,43 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D4DDB7701B6D6D49009D95C4 /* fakephonecall WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB7731B6D6D49009D95C4 /* InterfaceController.h */,
+				D4DDB7741B6D6D49009D95C4 /* InterfaceController.m */,
+				D4DDB7761B6D6D49009D95C4 /* Images.xcassets */,
+				D4DDB7711B6D6D49009D95C4 /* Supporting Files */,
+			);
+			path = "fakephonecall WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D4DDB7711B6D6D49009D95C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB7721B6D6D49009D95C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4DDB77E1B6D6D49009D95C4 /* fakephonecall WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB7811B6D6D49009D95C4 /* Interface.storyboard */,
+				D4DDB7841B6D6D49009D95C4 /* Images.xcassets */,
+				D4DDB77F1B6D6D49009D95C4 /* Supporting Files */,
+			);
+			path = "fakephonecall WatchKit App";
+			sourceTree = "<group>";
+		};
+		D4DDB77F1B6D6D49009D95C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB7801B6D6D49009D95C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,10 +324,12 @@
 				D447DE9A1B6B341E0088D931 /* Frameworks */,
 				D447DE9B1B6B341E0088D931 /* Resources */,
 				7012AFEFAF948CEFD2064F56 /* Copy Pods Resources */,
+				D4DDB78F1B6D6D49009D95C4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D4DDB7871B6D6D49009D95C4 /* PBXTargetDependency */,
 			);
 			name = fakephonecall;
 			productName = fakephonecall;
@@ -258,6 +356,39 @@
 			productReference = D447DEB61B6B341E0088D931 /* fakephonecallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D4DDB76E1B6D6D49009D95C4 /* fakephonecall WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DDB78C1B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit Extension" */;
+			buildPhases = (
+				D4DDB76B1B6D6D49009D95C4 /* Sources */,
+				D4DDB76C1B6D6D49009D95C4 /* Frameworks */,
+				D4DDB76D1B6D6D49009D95C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4DDB77D1B6D6D49009D95C4 /* PBXTargetDependency */,
+			);
+			name = "fakephonecall WatchKit Extension";
+			productName = "fakephonecall WatchKit Extension";
+			productReference = D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		D4DDB7791B6D6D49009D95C4 /* fakephonecall WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DDB7891B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit App" */;
+			buildPhases = (
+				D4DDB7781B6D6D49009D95C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fakephonecall WatchKit App";
+			productName = "fakephonecall WatchKit App";
+			productReference = D4DDB77A1B6D6D49009D95C4 /* fakephonecall WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -273,6 +404,12 @@
 					D447DEB51B6B341E0088D931 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = D447DE9C1B6B341E0088D931;
+					};
+					D4DDB76E1B6D6D49009D95C4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D4DDB7791B6D6D49009D95C4 = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -291,6 +428,8 @@
 			targets = (
 				D447DE9C1B6B341E0088D931 /* fakephonecall */,
 				D447DEB51B6B341E0088D931 /* fakephonecallTests */,
+				D4DDB76E1B6D6D49009D95C4 /* fakephonecall WatchKit Extension */,
+				D4DDB7791B6D6D49009D95C4 /* fakephonecall WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +449,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDB76D1B6D6D49009D95C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDB77B1B6D6D49009D95C4 /* fakephonecall WatchKit App.app in Resources */,
+				D4DDB7771B6D6D49009D95C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDB7781B6D6D49009D95C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDB7831B6D6D49009D95C4 /* Interface.storyboard in Resources */,
+				D4DDB7851B6D6D49009D95C4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +548,7 @@
 				D4B988541B6D5B62008BFADD /* ContactCell.m in Sources */,
 				D4DDB7511B6B5837009D95C4 /* HomeViewController.m in Sources */,
 				D4DDB7671B6D5E23009D95C4 /* GeneralUtilities.m in Sources */,
+				D4DDB76A1B6D6626009D95C4 /* CallManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +560,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4DDB76B1B6D6D49009D95C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDB7751B6D6D49009D95C4 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -409,6 +575,16 @@
 			isa = PBXTargetDependency;
 			target = D447DE9C1B6B341E0088D931 /* fakephonecall */;
 			targetProxy = D447DEB71B6B341E0088D931 /* PBXContainerItemProxy */;
+		};
+		D4DDB77D1B6D6D49009D95C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4DDB7791B6D6D49009D95C4 /* fakephonecall WatchKit App */;
+			targetProxy = D4DDB77C1B6D6D49009D95C4 /* PBXContainerItemProxy */;
+		};
+		D4DDB7871B6D6D49009D95C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4DDB76E1B6D6D49009D95C4 /* fakephonecall WatchKit Extension */;
+			targetProxy = D4DDB7861B6D6D49009D95C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,6 +603,14 @@
 				D447DEB01B6B341E0088D931 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D4DDB7811B6D6D49009D95C4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DDB7821B6D6D49009D95C4 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -572,6 +756,62 @@
 			};
 			name = Release;
 		};
+		D4DDB78A1B6D6D49009D95C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = fakephonecall_WatchKit_Extension;
+				INFOPLIST_FILE = "fakephonecall WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		D4DDB78B1B6D6D49009D95C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = fakephonecall_WatchKit_Extension;
+				INFOPLIST_FILE = "fakephonecall WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		D4DDB78D1B6D6D49009D95C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "fakephonecall WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D4DDB78E1B6D6D49009D95C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "fakephonecall WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,6 +841,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D4DDB7891B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DDB78A1B6D6D49009D95C4 /* Debug */,
+				D4DDB78B1B6D6D49009D95C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4DDB78C1B6D6D49009D95C4 /* Build configuration list for PBXNativeTarget "fakephonecall WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DDB78D1B6D6D49009D95C4 /* Debug */,
+				D4DDB78E1B6D6D49009D95C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
