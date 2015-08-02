@@ -37,12 +37,28 @@
 - (IBAction)registerButtonPressed:(id)sender {
     if ([self validateFields])
     {
+        [self.actiivityIndicator startAnimating];
+        [self setButtonsEnabled:NO];
         
+        __weak typeof(self) weakSelf = self;
+        [[FPCManager sharedManager] loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text name:self.nameTextField.text completion:^(BOOL success){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.actiivityIndicator stopAnimating];
+                [self setButtonsEnabled:YES];
+            });
+            
+            if (success) [self performSegueWithIdentifier:@"login" sender:self];
+        }];
     }
 }
 
 - (IBAction)backButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{ 
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (BOOL)validateFields
@@ -67,7 +83,7 @@
 }
 
 - (BOOL) validateEmail: (NSString *) candidate {
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,8}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     
     return [emailTest evaluateWithObject:candidate];
@@ -86,6 +102,12 @@
     [alertController addAction:cancelAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)setButtonsEnabled:(BOOL)enabled
+{
+    self.registerButton.enabled = enabled;
+    self.backBUtton.enabled = enabled;
 }
 
 @end

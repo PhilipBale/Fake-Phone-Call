@@ -404,9 +404,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="actiivityIndicator" destination="o5d-5R-YHo" id="kX2-nE-7YZ"/>
+                        <outlet property="backBUtton" destination="jAj-NW-nVu" id="2dA-dD-p4s"/>
                         <outlet property="emailTextField" destination="NoT-EP-0Eu" id="qJt-9b-fSD"/>
                         <outlet property="nameTextField" destination="B8g-wF-ENQ" id="kcf-rZ-9Ll"/>
                         <outlet property="passwordTextField" destination="rTb-Mm-Xfc" id="XsN-Mr-RRv"/>
+                        <outlet property="registerButton" destination="Qp8-T9-LLO" id="gN3-Io-T1u"/>
+                        <segue destination="saA-bt-fTE" kind="show" identifier="login" id="hr5-ej-XjH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5d-SW-uhI" sceneMemberID="firstResponder"/>
@@ -420,4 +423,7 @@
         <image name="settings" width="22" height="22"/>
         <image name="shop" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hr5-ej-XjH"/>
+    </inferredMetricsTieBreakers>
 </document>
