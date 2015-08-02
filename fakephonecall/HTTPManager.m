@@ -20,7 +20,7 @@
 #define API_PATH(PATH) (BASE_API_URL @"/fake_phone_call/api/v" API_VERSION @"/" #PATH)
 
 #define kAPIAttempts 5
-#define kAPIAttemptDelay 0.5
+#define kAPIAttemptDelay 0.25
 
 NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
 NSString * const kApiMakeCallPath = API_PATH(make_call);

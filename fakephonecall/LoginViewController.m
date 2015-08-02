@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "FPCManager.h"
 
 @interface LoginViewController ()
 
@@ -27,7 +28,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self performSegueWithIdentifier:@"login" sender:self];
 }
 
 /*
@@ -39,5 +39,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)loginButtonPressed:(id)sender {
+    [self.activityIndicator startAnimating];
+    [self setButtonsEnabled:NO];
+    
+    __weak typeof(self) weakSelf = self;
+    [[FPCManager sharedManager] loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text name:@"nil" completion:^(BOOL success){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.activityIndicator stopAnimating];
+            [self setButtonsEnabled:YES];
+        });
+        
+        if (success) [self performSegueWithIdentifier:@"login" sender:self];
+    }];
+}
+
+- (void)setButtonsEnabled:(BOOL)enabled
+{
+    self.loginButton.enabled = enabled;
+    self.registerButton.enabled = enabled;
+}
 
 @end
