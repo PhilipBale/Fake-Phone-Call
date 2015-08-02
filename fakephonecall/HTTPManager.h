@@ -10,7 +10,8 @@
 #import "AFHTTPRequestOperationManager.h"
 
 extern NSString * const kApiLoginOrRegisterPath;
-extern NSString * const kApiMakeCallPath;
+extern NSString * const kApiPlaceCallPath;
+extern NSString * const kApiLoginWithTokenPath;
 
 @interface HTTPManager : AFHTTPRequestOperationManager
 

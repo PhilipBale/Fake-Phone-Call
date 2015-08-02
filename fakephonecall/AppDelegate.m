@@ -24,16 +24,6 @@
     NSURL *realmDirectoy = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.logikcomputing.fakephonecall"];
     NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"/db.realm"];
     
-    [[FPCManager sharedManager] loginOrRegisterWithEmail:@"test@test.com" password:@" testtest" name:@"Test Account" completion:^(BOOL success) {
-        if (success)
-        {
-            NSLog(@"Successful login!");
-        }
-        else
-        {
-            NSLog(@"Failed login!");
-        }
-    }];
     [RLMRealm setDefaultRealmPath:realmPath];
     
     return YES;

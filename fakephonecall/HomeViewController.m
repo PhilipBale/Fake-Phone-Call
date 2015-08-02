@@ -25,8 +25,6 @@
 @property (nonatomic, strong) UIActionSheet *cachedActionSheet;
 @property (nonatomic, strong) UIActionSheet *callActionSheet;
 
-@property (nonatomic, strong) FPCUser *testUser;
-
 @property NSMutableArray* contacts;
 
 @end
@@ -44,10 +42,7 @@
     //UIView *navBottomBorder = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     //[navBottomBorder removeFromSuperview];
     
-    self.testUser = [[FPCUser alloc] init];
-    self.testUser.callsRemaining = 5;
-    self.testUser.callsPlaced = 0;
-    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", self.testUser.callsRemaining] forState:UIControlStateNormal];
+    [self updateCallsRemaining];
     
     [self updateContacts];
 }
@@ -159,6 +154,10 @@
         if (buttonIndex >= [callOptions count]) return;
         NSInteger when = [[callOptions objectAtIndex:buttonIndex] integerValue];
         NSLog(@"Placing call in %li secs", when);
+        if ([FPCManager sharedManager].currentUser.callsRemaining == 0) {
+            [self makeAlertWithTitle:@"No Credits Remaining" message:@"Please purchase more call credit to continue!"];
+            return;
+        }
         [[FPCManager sharedManager] placeCallToNumber:self.toCallCachedNumber when:when completion:^(BOOL completion){
             __weak typeof(self) weakSelf = self;
             [weakSelf callPlacedSuccess:completion];
@@ -182,6 +181,7 @@
 - (void)callPlacedSuccess:(BOOL)success
 {
     if (success) {
+        [self updateCallsRemaining];
         NSLog(@"Call placed");
     }
 }
@@ -330,6 +330,11 @@
     
     return [shortened stringByReplacingOccurrencesOfString:@"," withString:@""];
     
+}
+
+- (void)updateCallsRemaining
+{
+    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", [FPCManager sharedManager].currentUser.callsRemaining] forState:UIControlStateNormal];
 }
 
 - (void)updateContacts

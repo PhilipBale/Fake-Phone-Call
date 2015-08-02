@@ -36,6 +36,8 @@
 		D4DDB79B1B6D8E53009D95C4 /* CallOptionsRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */; };
 		D4DDB79F1B6DD8DA009D95C4 /* FPCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */; };
 		D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */; };
+		D4DDB7AC1B6ED485009D95C4 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */; };
+		D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCManager.m; sourceTree = "<group>"; };
 		D4DDB7A01B6DDDF2009D95C4 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		D4DDB7AA1B6ED485009D95C4 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		D4DDB7AD1B6EDCD1009D95C4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.release.xcconfig"; sourceTree = "<group>"; };
 		FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +289,10 @@
 				D4DDB74D1B6B3C7F009D95C4 /* LoginViewController.m */,
 				D4DDB74F1B6B5837009D95C4 /* HomeViewController.h */,
 				D4DDB7501B6B5837009D95C4 /* HomeViewController.m */,
+				D4DDB7AA1B6ED485009D95C4 /* AccountViewController.h */,
+				D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */,
+				D4DDB7AD1B6EDCD1009D95C4 /* RegisterViewController.h */,
+				D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */,
 			);
 			name = "VIew Controllers";
 			sourceTree = "<group>";
@@ -631,7 +641,9 @@
 				D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */,
 				D4DDB74E1B6B3C7F009D95C4 /* LoginViewController.m in Sources */,
 				D4DDB79F1B6DD8DA009D95C4 /* FPCManager.m in Sources */,
+				D4DDB7AC1B6ED485009D95C4 /* AccountViewController.m in Sources */,
 				D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */,
+				D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */,
 				D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */,
 				D4B988541B6D5B62008BFADD /* ContactCell.m in Sources */,
 				D4DDB7511B6B5837009D95C4 /* HomeViewController.m in Sources */,

@@ -17,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *token = [[FPCManager sharedManager] loadTokenFromKeychain];
+    if (token) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self attemptAutoLoginWithToken:token];
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +51,21 @@
     
     __weak typeof(self) weakSelf = self;
     [[FPCManager sharedManager] loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text name:@"nil" completion:^(BOOL success){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.activityIndicator stopAnimating];
+            [self setButtonsEnabled:YES];
+        });
+        
+        if (success) [self performSegueWithIdentifier:@"login" sender:self];
+    }];
+}
+
+- (void)attemptAutoLoginWithToken:(NSString *)token {
+    [self.activityIndicator startAnimating];
+    [self setButtonsEnabled:NO];
+    
+    __weak typeof(self) weakSelf = self;
+    [[FPCManager sharedManager] loginWithToken:token completion:^(BOOL success){
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.activityIndicator stopAnimating];
             [self setButtonsEnabled:YES];

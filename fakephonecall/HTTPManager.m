@@ -23,7 +23,8 @@
 #define kAPIAttemptDelay 0.25
 
 NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
-NSString * const kApiMakeCallPath = API_PATH(make_call);
+NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
+NSString * const kApiPlaceCallPath = API_PATH(place_call);
 
 @implementation HTTPManager
 
