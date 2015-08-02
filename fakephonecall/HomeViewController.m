@@ -47,7 +47,7 @@
     self.testUser = [[FPCUser alloc] init];
     self.testUser.callsRemaining = 5;
     self.testUser.callsPlaced = 0;
-    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%i calls remaining", self.testUser.callsRemaining] forState:UIControlStateNormal];
+    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", self.testUser.callsRemaining] forState:UIControlStateNormal];
     
     [self updateContacts];
 }
@@ -73,15 +73,15 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FPCContact *contact = [self.contacts objectAtIndex:indexPath.row];
     NSString *subject = [NSString stringWithFormat:@"Call %@", [self shortenedNameForContact:contact] ];
     self.callActionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 15 sec", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 15 sec", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
     self.toCallCachedNumber = contact.number;
     [self.callActionSheet showInView:self.view];
 }
@@ -158,13 +158,13 @@
     {
         if (buttonIndex >= [callOptions count]) return;
         NSInteger when = [[callOptions objectAtIndex:buttonIndex] integerValue];
-        NSLog(@"Placing call in %i secs", when);
+        NSLog(@"Placing call in %li secs", when);
         [[CallManager sharedManager] placeCallForUser:nil toNumber:self.toCallCachedNumber when:when success:^(BOOL success){
             __weak typeof(self) weakSelf = self;
             [weakSelf callPlacedSuccess:success];
         }];
         
-         return;
+        return;
     }
     switch (buttonIndex) {
         case 0:
@@ -213,7 +213,7 @@
 {
     CFStringRef firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
     CFStringRef lastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
-    NSString *fullName = [NSString stringWithFormat:@"%@, %@", lastName, firstName];
+    NSString *fullName = [[NSString stringWithFormat:@"%@, %@", lastName, firstName] stringByReplacingOccurrencesOfString:@"(null), " withString:@""];
     
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
     if (phoneNumbers) {
@@ -287,7 +287,7 @@
     switch (index) {
         case 0:
         {
-            NSLog(@"Removing %i", cell.contactId);
+            NSLog(@"Removing %li", cell.contactId);
             NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
             FPCContact *toRemove = [self.contacts objectAtIndex:cellIndexPath.item];
             
@@ -307,12 +307,29 @@
 - (NSString *)shortenedNameForContact:(FPCContact *)contact
 {
     NSArray *split = [contact.name componentsSeparatedByString:@" "];
+    NSString *shortened;
     if (split.count == 3)
     {
         return [split objectAtIndex:1];
-    } else {
-        return [((NSString *)[split objectAtIndex:0]) stringByReplacingOccurrencesOfString:@"," withString:@""];
     }
+    else if (split.count == 2)
+    {
+        if ([((NSString *)[split objectAtIndex:1]) containsString:@"("])
+        {
+            shortened = [NSString stringWithFormat:@"%@", [split objectAtIndex:0]];
+        }
+        else
+        {
+            shortened =  [NSString stringWithFormat:@"%@", [split objectAtIndex:1]];
+        }
+    }
+    else
+    {
+        shortened =  [split objectAtIndex:0];
+    }
+    
+    return [shortened stringByReplacingOccurrencesOfString:@"," withString:@""];
+    
 }
 
 - (void)updateContacts

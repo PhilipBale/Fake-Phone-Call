@@ -63,12 +63,11 @@
             </objects>
             <point key="canvasLocation" x="608" y="509"/>
         </scene>
-        <!--Call Result-->
+        <!--dismiss-->
         <scene sceneID="bag-sx-kIZ">
             <objects>
-                <controller identifier="CallResult" title="Call Result" id="vcS-fP-xhc">
+                <controller identifier="CallResult" title="dismiss" id="vcS-fP-xhc">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Dismiss" id="8aG-nD-ExZ"/>
                         <label alignment="center" verticalAlignment="center" text="Success!" id="R0p-Uk-NGn"/>
                         <label alignment="center" verticalAlignment="center" text="Call Placed!" textAlignment="left" id="Y4F-yD-liU">
                             <color key="textColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>

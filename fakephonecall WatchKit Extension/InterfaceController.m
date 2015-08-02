@@ -25,7 +25,7 @@
     [super awakeWithContext:context];
     
     NSURL *realmDirectoy = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.logikcomputing.fakephonecall"];
-    NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"db.realm"];
+    NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"/db.realm"];
     [RLMRealm setDefaultRealmPath:realmPath];
 
     [self loadContactsTable];

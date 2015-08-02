@@ -21,8 +21,9 @@
     [[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
     
     NSURL *realmDirectoy = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.logikcomputing.fakephonecall"];
-    NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"db.realm"];
+    NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"/db.realm"];
     [RLMRealm setDefaultRealmPath:realmPath];
+    
     return YES;
 }
 
