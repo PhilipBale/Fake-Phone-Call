@@ -24,7 +24,6 @@
 		D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7601B6D52EC009D95C4 /* FPCUser.m */; };
 		D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7631B6D5414009D95C4 /* FPCContact.m */; };
 		D4DDB7671B6D5E23009D95C4 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */; };
-		D4DDB76A1B6D6626009D95C4 /* CallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7691B6D6626009D95C4 /* CallManager.m */; };
 		D4DDB7751B6D6D49009D95C4 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7741B6D6D49009D95C4 /* InterfaceController.m */; };
 		D4DDB7771B6D6D49009D95C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7761B6D6D49009D95C4 /* Images.xcassets */; };
 		D4DDB77B1B6D6D49009D95C4 /* fakephonecall WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB77A1B6D6D49009D95C4 /* fakephonecall WatchKit App.app */; };
@@ -35,6 +34,8 @@
 		D4DDB7951B6D87B3009D95C4 /* FPCContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7631B6D5414009D95C4 /* FPCContact.m */; };
 		D4DDB7981B6D8CBC009D95C4 /* CallOptionsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7971B6D8CBC009D95C4 /* CallOptionsInterfaceController.m */; };
 		D4DDB79B1B6D8E53009D95C4 /* CallOptionsRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */; };
+		D4DDB79F1B6DD8DA009D95C4 /* FPCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */; };
+		D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +108,6 @@
 		D4DDB7631B6D5414009D95C4 /* FPCContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCContact.m; sourceTree = "<group>"; };
 		D4DDB7651B6D5E23009D95C4 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
 		D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtilities.m; sourceTree = "<group>"; };
-		D4DDB7681B6D6626009D95C4 /* CallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallManager.h; sourceTree = "<group>"; };
-		D4DDB7691B6D6626009D95C4 /* CallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallManager.m; sourceTree = "<group>"; };
 		D4DDB76F1B6D6D49009D95C4 /* fakephonecall WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "fakephonecall WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DDB7721B6D6D49009D95C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4DDB7731B6D6D49009D95C4 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -126,6 +125,10 @@
 		D4DDB7971B6D8CBC009D95C4 /* CallOptionsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOptionsInterfaceController.m; sourceTree = "<group>"; };
 		D4DDB7991B6D8E53009D95C4 /* CallOptionsRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOptionsRowController.h; sourceTree = "<group>"; };
 		D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOptionsRowController.m; sourceTree = "<group>"; };
+		D4DDB79D1B6DD8DA009D95C4 /* FPCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPCManager.h; sourceTree = "<group>"; };
+		D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCManager.m; sourceTree = "<group>"; };
+		D4DDB7A01B6DDDF2009D95C4 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.release.xcconfig"; sourceTree = "<group>"; };
 		FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 		D447DE9F1B6B341E0088D931 /* fakephonecall */ = {
 			isa = PBXGroup;
 			children = (
+				D4DDB79C1B6DD8C6009D95C4 /* Managers */,
 				D4DDB7931B6D84D3009D95C4 /* fakephonecall.entitlements */,
 				D4DDB75E1B6D52D0009D95C4 /* Models */,
 				D4DDB74A1B6B3C3D009D95C4 /* UI */,
@@ -222,8 +226,6 @@
 				D447DEA01B6B341E0088D931 /* Supporting Files */,
 				D4DDB7651B6D5E23009D95C4 /* GeneralUtilities.h */,
 				D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */,
-				D4DDB7681B6D6626009D95C4 /* CallManager.h */,
-				D4DDB7691B6D6626009D95C4 /* CallManager.m */,
 			);
 			path = fakephonecall;
 			sourceTree = "<group>";
@@ -338,6 +340,17 @@
 				D4DDB7801B6D6D49009D95C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4DDB79C1B6DD8C6009D95C4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB79D1B6DD8DA009D95C4 /* FPCManager.h */,
+				D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */,
+				D4DDB7A01B6DDDF2009D95C4 /* HTTPManager.h */,
+				D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,11 +630,12 @@
 				D447DEA31B6B341E0088D931 /* main.m in Sources */,
 				D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */,
 				D4DDB74E1B6B3C7F009D95C4 /* LoginViewController.m in Sources */,
+				D4DDB79F1B6DD8DA009D95C4 /* FPCManager.m in Sources */,
+				D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */,
 				D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */,
 				D4B988541B6D5B62008BFADD /* ContactCell.m in Sources */,
 				D4DDB7511B6B5837009D95C4 /* HomeViewController.m in Sources */,
 				D4DDB7671B6D5E23009D95C4 /* GeneralUtilities.m in Sources */,
-				D4DDB76A1B6D6626009D95C4 /* CallManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

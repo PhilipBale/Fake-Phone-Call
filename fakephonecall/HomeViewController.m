@@ -12,7 +12,7 @@
 #import "FPCContact.h"
 #import "ContactCell.h"
 #import "GeneralUtilities.h"
-#import "CallManager.h"
+#import "FPCManager.h"
 
 @interface HomeViewController ()
 
@@ -159,9 +159,9 @@
         if (buttonIndex >= [callOptions count]) return;
         NSInteger when = [[callOptions objectAtIndex:buttonIndex] integerValue];
         NSLog(@"Placing call in %li secs", when);
-        [[CallManager sharedManager] placeCallForUser:nil toNumber:self.toCallCachedNumber when:when success:^(BOOL success){
+        [[FPCManager sharedManager] placeCallToNumber:self.toCallCachedNumber when:when completion:^(BOOL completion){
             __weak typeof(self) weakSelf = self;
-            [weakSelf callPlacedSuccess:success];
+            [weakSelf callPlacedSuccess:completion];
         }];
         
         return;
