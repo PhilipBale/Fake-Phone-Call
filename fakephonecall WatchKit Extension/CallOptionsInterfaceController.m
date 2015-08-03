@@ -52,7 +52,13 @@
 -(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex
 {
     NSLog(@"Calling %@ in %@ secs", self.contact.number, [callOptions objectAtIndex:rowIndex]);
-    [[WatchWormholeManager sharedManager] placeCallWithNumber:self.contact.number when:[callOptions objectAtIndex:rowIndex]];
+    //[[WatchWormholeManager sharedManager] placeCallWithNumber:self.contact.number when:[callOptions objectAtIndex:rowIndex]];
+    NSDictionary *userInfo = @{@"number":self.contact.number, @"when":[callOptions objectAtIndex:rowIndex]};
+    [WKInterfaceController openParentApplication:userInfo reply:^(NSDictionary *replyInfo, NSError *error){
+         NSLog(@"Received reply from parent app!");
+     }];
+    
+
     [self presentControllerWithName:@"CallResult" context:nil];
     
 }

@@ -49,7 +49,7 @@
     //UIView *navBottomBorder = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     //[navBottomBorder removeFromSuperview];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCallsRemaining) name:@"wormholeCallPlaced" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCallsRemaining) name:@"extensionCallPlaced" object:nil];
     
     [self updateContacts];
 }

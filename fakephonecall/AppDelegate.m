@@ -31,6 +31,49 @@
     return YES;
 }
 
+-(void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
+{
+    NSLog(@"Handling parent app request!");
+    __block UIBackgroundTaskIdentifier watchKitHandler;
+    watchKitHandler = [[UIApplication sharedApplication]
+                       beginBackgroundTaskWithName:@"backgroundTask"
+                       expirationHandler:^{
+                           watchKitHandler = UIBackgroundTaskInvalid;
+                       }];
+    
+    NSString *token = [[FPCManager sharedManager] loadTokenFromKeychain];
+    BOOL curUser = [FPCManager sharedManager].currentUser != nil;
+    
+    if (!curUser) {
+        if (token) {
+            [[FPCManager sharedManager] loginWithToken:token completion:^(BOOL success){
+                if (success)
+                {
+                    [[FPCManager sharedManager] placeCallToNumber:[userInfo objectForKey:@"number"] when:[[userInfo objectForKey:@"when"] integerValue] completion:^(BOOL success) {
+                        [[UIApplication sharedApplication] endBackgroundTask:watchKitHandler];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"extensionCallPlaced" object:nil];
+                    }];
+                }
+                else
+                {
+                    [[UIApplication sharedApplication] endBackgroundTask:watchKitHandler];
+                }
+            }];
+        }
+        else
+        {
+            [[UIApplication sharedApplication] endBackgroundTask:watchKitHandler];
+        }
+    }
+    else
+    {
+        [[FPCManager sharedManager] placeCallToNumber:[userInfo objectForKey:@"number"] when:[[userInfo objectForKey:@"when"] integerValue] completion:^(BOOL success) {
+            [[UIApplication sharedApplication] endBackgroundTask:watchKitHandler];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"extensionCallPlaced" object:nil];
+        }];
+    } 
+    reply(nil);
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

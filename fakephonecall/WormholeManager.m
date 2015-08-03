@@ -34,7 +34,7 @@
             NSLog(@"Call placed received from wormhole");
             [[FPCManager sharedManager] placeCallToNumber:[messageObject objectForKey:@"number"] when:[[messageObject objectForKey:@"when"] integerValue] completion:^(BOOL success){
                 NSLog(@"Posting nsnotification center notice that wormhole call placed");
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"wormholeCallPlaced" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"extensionCallPlaced" object:nil];
             }];
         }];
     }
