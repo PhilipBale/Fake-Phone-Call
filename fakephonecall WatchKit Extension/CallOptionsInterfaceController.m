@@ -9,13 +9,14 @@
 #import "CallOptionsInterfaceController.h"
 #import "CallOptionsRowController.h"
 #import "FPCContact.h"
+#import "WatchWormholeManager.h"
 
 @interface CallOptionsInterfaceController ()
 
 @property (nonatomic, strong) FPCContact* contact;
 @end
 
-#define callOptionsValues @[@0, @15, @30, @60, @300]
+#define callOptions @[@0, @30, @60, @300, @600]
 
 @implementation CallOptionsInterfaceController
 
@@ -39,7 +40,7 @@
 
 - (void)loadOptionsTable
 {
-    NSArray *labels = @[@"now", @"in 15 sec", @"in 30 sec", @"in 1 min", @"in  5 min"];
+    NSArray *labels = @[@"now", @"in 30 sec", @"in 1 min", @"in  5 min", @"in  10 min"];
     [self.optionsTable setNumberOfRows:labels.count withRowType:@"CallOptionsRowController"];
     for (int i = 0; i < labels.count; i++)
     {
@@ -50,8 +51,10 @@
 
 -(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex
 {
-    NSLog(@"Calling in %@ secs", [callOptionsValues objectAtIndex:rowIndex]);
+    NSLog(@"Calling %@ in %@ secs", self.contact.number, [callOptions objectAtIndex:rowIndex]);
+    [[WatchWormholeManager sharedManager] placeCallWithNumber:self.contact.number when:[callOptions objectAtIndex:rowIndex]];
     [self presentControllerWithName:@"CallResult" context:nil];
+    
 }
 @end
 

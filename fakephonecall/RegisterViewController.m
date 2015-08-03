@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "FPCManager.h"
+#import "FPCUser.h"
 
 @interface RegisterViewController ()
 
@@ -63,7 +64,14 @@
 
 - (BOOL)validateFields
 {
-    if (self.nameTextField.text.length < 3)
+    
+    NSInteger userCount = [FPCUser allObjects].count;
+    if (userCount >= 3)
+    {
+        [self makeAlertWithTitle:@"Too Many Users" message:@"We're sorry, but you've already registered 3 users and are at the limit. Please use an existing account"];
+        return NO;
+    }
+    else if (self.nameTextField.text.length < 3)
     {
         [self makeAlertWithTitle:@"Invalid name" message:@"Please enter a valid name!"];
         return NO;
@@ -73,11 +81,14 @@
         [self makeAlertWithTitle:@"Invalid email" message:@"Please enter a valid email address"];
         return NO;
     }
-    else if (self.passwordTextField.text.length < 7)
+    else if (self.passwordTextField.text.length < 6)
     {
-        [self makeAlertWithTitle:@"Password too short" message:@"Please make password at least 7 characters long"];
+        [self makeAlertWithTitle:@"Password too short" message:@"Please make password at least 6 characters long"];
         return NO;
     }
+    
+    
+    
     
     return YES;
 }

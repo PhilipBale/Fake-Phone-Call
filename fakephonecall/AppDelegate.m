@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RLMRealm.h"
 #import "FPCManager.h"
+#import "WormholeManager.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
     
+    [WormholeManager sharedManager];
     NSURL *realmDirectoy = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.logikcomputing.fakephonecall"];
     NSString *realmPath = [realmDirectoy.path stringByAppendingString:@"/db.realm"];
     

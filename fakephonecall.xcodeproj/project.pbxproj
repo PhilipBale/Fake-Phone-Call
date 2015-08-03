@@ -38,6 +38,8 @@
 		D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */; };
 		D4DDB7AC1B6ED485009D95C4 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */; };
 		D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */; };
+		D4DDB7B21B6F095F009D95C4 /* WormholeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7B11B6F095F009D95C4 /* WormholeManager.m */; };
+		D4DDB7B91B6F0BF7009D95C4 /* WatchWormholeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7B81B6F0BF7009D95C4 /* WatchWormholeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,10 @@
 		D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		D4DDB7AD1B6EDCD1009D95C4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		D4DDB7B01B6F095F009D95C4 /* WormholeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WormholeManager.h; sourceTree = "<group>"; };
+		D4DDB7B11B6F095F009D95C4 /* WormholeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WormholeManager.m; sourceTree = "<group>"; };
+		D4DDB7B71B6F0BF7009D95C4 /* WatchWormholeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchWormholeManager.h; sourceTree = "<group>"; };
+		D4DDB7B81B6F0BF7009D95C4 /* WatchWormholeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchWormholeManager.m; sourceTree = "<group>"; };
 		EA7644FF38064B4D4AB76EC6 /* Pods-fakephonecall WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall WatchKit Extension/Pods-fakephonecall WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		FC840CE5349CE404A2274548 /* Pods-fakephonecall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.release.xcconfig"; sourceTree = "<group>"; };
 		FEF89BFAB1403D26CB8F31A2 /* Pods-fakephonecallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecallTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecallTests/Pods-fakephonecallTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +323,8 @@
 				D4DDB79A1B6D8E53009D95C4 /* CallOptionsRowController.m */,
 				D4DDB7901B6D7FF1009D95C4 /* ContactsTableRowController.h */,
 				D4DDB7911B6D7FF1009D95C4 /* ContactsTableRowController.m */,
+				D4DDB7B71B6F0BF7009D95C4 /* WatchWormholeManager.h */,
+				D4DDB7B81B6F0BF7009D95C4 /* WatchWormholeManager.m */,
 				D4DDB7941B6D850B009D95C4 /* fakephonecall WatchKit Extension.entitlements */,
 				D4DDB7761B6D6D49009D95C4 /* Images.xcassets */,
 				D4DDB7731B6D6D49009D95C4 /* InterfaceController.h */,
@@ -359,6 +367,8 @@
 				D4DDB79E1B6DD8DA009D95C4 /* FPCManager.m */,
 				D4DDB7A01B6DDDF2009D95C4 /* HTTPManager.h */,
 				D4DDB7A11B6DDDF2009D95C4 /* HTTPManager.m */,
+				D4DDB7B01B6F095F009D95C4 /* WormholeManager.h */,
+				D4DDB7B11B6F095F009D95C4 /* WormholeManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -644,6 +654,7 @@
 				D4DDB7AC1B6ED485009D95C4 /* AccountViewController.m in Sources */,
 				D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */,
 				D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */,
+				D4DDB7B21B6F095F009D95C4 /* WormholeManager.m in Sources */,
 				D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */,
 				D4B988541B6D5B62008BFADD /* ContactCell.m in Sources */,
 				D4DDB7511B6B5837009D95C4 /* HomeViewController.m in Sources */,
@@ -667,6 +678,7 @@
 				D4DDB7981B6D8CBC009D95C4 /* CallOptionsInterfaceController.m in Sources */,
 				D4DDB7921B6D7FF1009D95C4 /* ContactsTableRowController.m in Sources */,
 				D4DDB7951B6D87B3009D95C4 /* FPCContact.m in Sources */,
+				D4DDB7B91B6F0BF7009D95C4 /* WatchWormholeManager.m in Sources */,
 				D4DDB7751B6D6D49009D95C4 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

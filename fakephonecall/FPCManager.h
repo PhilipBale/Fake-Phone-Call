@@ -16,6 +16,7 @@
 + (FPCManager *)sharedManager;
 
 - (void)placeCallToNumber:(NSString *)number when:(NSInteger)when completion:(void (^)(BOOL))completion;
+
 - (void)loginOrRegisterWithEmail:(NSString *)email password:(NSString *)password name:(NSString *)name completion:(void (^)(BOOL))completion;
 - (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL))completion;
 - (NSString *)loadTokenFromKeychain;

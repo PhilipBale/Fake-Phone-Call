@@ -6,10 +6,12 @@ target 'fakephonecall' do
 	pod 'AFNetworking'
 	pod 'JTObjectMapping'
 	pod 'SWTableViewCell'
+	pod 'MMWormhole'
 end
 
 target 'fakephonecall WatchKit Extension' do
 	pod 'Realm'
+	pod 'MMWormhole'
 end
 
 target 'fakephonecallTests' do

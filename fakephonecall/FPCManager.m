@@ -23,6 +23,11 @@
 
 - (void) placeCallToNumber:(NSString *)number when:(NSInteger)when completion:(void (^)(BOOL))completion
 {
+    if (self.currentUser.callsRemaining == 0) {
+        if (completion) completion(NO);
+        return;
+    }
+    
     NSDictionary *placeCallParams = @{@"call":@{@"number": number, @"when":[NSNumber numberWithInteger:when]}};
     [[HTTPManager sharedManager] POST:kApiPlaceCallPath parameters:placeCallParams success:^(id responseObject) {
         [self assignCurrentUserWithUserDictionary:[responseObject objectForKey:@"user"]];
@@ -31,7 +36,7 @@
     } failure:^(NSError *error) {
         if (completion) completion(NO);
     }];
-}
+} 
 
 - (void)logout
 {

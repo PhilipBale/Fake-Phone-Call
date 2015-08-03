@@ -13,6 +13,7 @@
 #import "ContactCell.h"
 #import "GeneralUtilities.h"
 #import "FPCManager.h"
+#import "WormholeManager.h"
 
 @interface HomeViewController ()
 
@@ -29,9 +30,15 @@
 
 @end
 
-#define callOptions @[@0, @15, @30, @60, @300]
+#define callOptions @[@0, @30, @60, @300, @600]
 
 @implementation HomeViewController
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,9 +49,15 @@
     //UIView *navBottomBorder = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     //[navBottomBorder removeFromSuperview];
     
-    [self updateCallsRemaining];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCallsRemaining) name:@"wormholeCallPlaced" object:nil];
     
     [self updateContacts];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self updateCallsRemaining];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +89,7 @@
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"
                                          destructiveButtonTitle:nil
-                                              otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject], [NSString stringWithFormat:@"%@ in 15 sec", subject], [NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject],nil];
+                                              otherButtonTitles:[NSString stringWithFormat:@"%@ now", subject],[NSString stringWithFormat:@"%@ in 30 sec", subject], [NSString stringWithFormat:@"%@ in 1 min", subject], [NSString stringWithFormat:@"%@ in 5 min", subject], [NSString stringWithFormat:@"%@ in 10 min", subject],nil];
     self.toCallCachedNumber = contact.number;
     [self.callActionSheet showInView:self.view];
 }
@@ -334,7 +347,9 @@
 
 - (void)updateCallsRemaining
 {
-    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", [FPCManager sharedManager].currentUser.callsRemaining] forState:UIControlStateNormal];
+    NSInteger callsRemaining = [FPCManager sharedManager].currentUser.callsRemaining;
+    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", callsRemaining] forState:UIControlStateNormal];
+    [self.callsRemainingButton setBackgroundColor: callsRemaining > 0 ? [UIColor colorWithRed:73.0/255 green:161.0/255 blue:61.0/255 alpha:1] : [UIColor redColor]];
 }
 
 - (void)updateContacts
