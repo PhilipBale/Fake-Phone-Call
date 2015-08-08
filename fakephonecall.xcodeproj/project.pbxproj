@@ -10,6 +10,7 @@
 		52A57627B1F1431E7AE3775F /* libPods-fakephonecallTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */; };
 		75442D343971BDD38160862A /* libPods-fakephonecall WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2092619C26EF5859B339B6B5 /* libPods-fakephonecall WatchKit Extension.a */; };
 		BCEB7300C998489F692006A3 /* libPods-fakephonecall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */; };
+		D41A5C5F1B76AA72005016E3 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5C5E1B76AA72005016E3 /* AddContactViewController.m */; };
 		D447DEA31B6B341E0088D931 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA21B6B341E0088D931 /* main.m */; };
 		D447DEA61B6B341E0088D931 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA51B6B341E0088D931 /* AppDelegate.m */; };
 		D447DEAC1B6B341E0088D931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D447DEAA1B6B341E0088D931 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */; };
 		D4DDB7B21B6F095F009D95C4 /* WormholeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7B11B6F095F009D95C4 /* WormholeManager.m */; };
 		D4DDB7B91B6F0BF7009D95C4 /* WatchWormholeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7B81B6F0BF7009D95C4 /* WatchWormholeManager.m */; };
+		D4DDB7BA1B6F3140009D95C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDB7761B6D6D49009D95C4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fakephonecall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fakephonecallTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BE3F90C22D2336F169F0CD /* Pods-fakephonecall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakephonecall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fakephonecall/Pods-fakephonecall.debug.xcconfig"; sourceTree = "<group>"; };
+		D41A5C5D1B76AA72005016E3 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		D41A5C5E1B76AA72005016E3 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		D447DE9D1B6B341E0088D931 /* fakephonecall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fakephonecall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D447DEA11B6B341E0088D931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D447DEA21B6B341E0088D931 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				D4DDB7AB1B6ED485009D95C4 /* AccountViewController.m */,
 				D4DDB7AD1B6EDCD1009D95C4 /* RegisterViewController.h */,
 				D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */,
+				D41A5C5D1B76AA72005016E3 /* AddContactViewController.h */,
+				D41A5C5E1B76AA72005016E3 /* AddContactViewController.m */,
 			);
 			name = "VIew Controllers";
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DDB7BA1B6F3140009D95C4 /* Images.xcassets in Resources */,
 				D4DDB7831B6D6D49009D95C4 /* Interface.storyboard in Resources */,
 				D4DDB7851B6D6D49009D95C4 /* Images.xcassets in Resources */,
 			);
@@ -653,6 +660,7 @@
 				D4DDB79F1B6DD8DA009D95C4 /* FPCManager.m in Sources */,
 				D4DDB7AC1B6ED485009D95C4 /* AccountViewController.m in Sources */,
 				D4DDB7A21B6DDDF2009D95C4 /* HTTPManager.m in Sources */,
+				D41A5C5F1B76AA72005016E3 /* AddContactViewController.m in Sources */,
 				D4DDB7AF1B6EDCD1009D95C4 /* RegisterViewController.m in Sources */,
 				D4DDB7B21B6F095F009D95C4 /* WormholeManager.m in Sources */,
 				D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */,
@@ -767,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -805,7 +813,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

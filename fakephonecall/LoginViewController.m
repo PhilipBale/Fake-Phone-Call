@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "FPCManager.h"
+#import "Generalutilities.h"
 
 @interface LoginViewController ()
 
@@ -24,6 +25,9 @@
             [self attemptAutoLoginWithToken:token];
         });
     }
+    
+    self.emailTextField.delegate = self;
+    self.passwordTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,14 +41,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 - (IBAction)loginButtonPressed:(id)sender {
     [self.activityIndicator startAnimating];
     [self setButtonsEnabled:NO];
@@ -84,6 +88,22 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == self.emailTextField || textField == self.passwordTextField)
+    {
+        [GeneralUtilities animateView:self.view up:YES delta:150 duration:.5];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.emailTextField || textField == self.passwordTextField)
+    {
+        [GeneralUtilities animateView:self.view up:NO delta:150 duration:.5];
+    }
 }
 
 @end

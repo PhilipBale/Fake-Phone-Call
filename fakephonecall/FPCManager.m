@@ -9,6 +9,7 @@
 #import "FPCManager.h"
 #import "HTTPManager.h"
 #import "AppDelegate.h"
+#import "FPCContact.h"
 #import <UIKit/UIKit.h>
 
 @implementation FPCManager
@@ -115,6 +116,24 @@
     [[RLMRealm defaultRealm] commitWriteTransaction];
     
     return returnObj;
+}
+
+- (void)saveContactWithName:(NSString *)name number:(NSString*)number completion:(void (^)(BOOL))completion
+
+{
+    NSLog(@"Saving contact with name: %@, number: %@", name, number);
+    FPCContact *contact = [[FPCContact alloc] init];
+    contact.name = name;
+    contact.number = number;
+    NSString *idHash = [NSString stringWithFormat: @"%@ %@", name, number];
+    contact.contactId = [idHash hash];
+    
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    {
+        [FPCContact createOrUpdateInDefaultRealmWithValue:contact];
+    }
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+    if (completion) completion(YES);
 }
 
 @end

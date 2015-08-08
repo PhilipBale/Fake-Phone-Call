@@ -60,6 +60,12 @@
     [self updateCallsRemaining];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self updateContacts];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -133,20 +139,10 @@
 
 - (void)saveContactWithName:(NSString *)name number:(NSString*)number
 {
-    NSLog(@"Saving contact with name: %@, number: %@", name, number);
-    FPCContact *contact = [[FPCContact alloc] init];
-    contact.name = name;
-    contact.number = number;
-    NSString *idHash = [NSString stringWithFormat: @"%@ %@", name, number];
-    contact.contactId = [idHash hash];
-    
-    [[RLMRealm defaultRealm] beginWriteTransaction];
-    {
-        [FPCContact createOrUpdateInDefaultRealmWithValue:contact];
-    }
-    [[RLMRealm defaultRealm] commitWriteTransaction];
-    [self updateContacts];
-    [self.tableView reloadData];
+    [[FPCManager sharedManager] saveContactWithName:name number:number completion:^(BOOL success) {
+        [self updateContacts];
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -166,9 +162,9 @@
     {
         if (buttonIndex >= [callOptions count]) return;
         NSInteger when = [[callOptions objectAtIndex:buttonIndex] integerValue];
-        NSLog(@"Placing call in %li secs", when);
+        NSLog(@"Placing call in %li secs", (long) when);
         if ([FPCManager sharedManager].currentUser.callsRemaining == 0) {
-            [self makeAlertWithTitle:@"No Credits Remaining" message:@"Please purchase more call credit to continue!"];
+            [GeneralUtilities makeAlertWithTitle:@"No Credits Remaining" message:@"Please purchase more call credit to continue!" viewController:self];
             return;
         }
         [[FPCManager sharedManager] placeCallToNumber:self.toCallCachedNumber when:when completion:^(BOOL completion){
@@ -181,6 +177,7 @@
     switch (buttonIndex) {
         case 0:
             NSLog(@"Custom entry selected");
+            [self performSegueWithIdentifier:@"customContact" sender:self];
             break;
         case 1:
             NSLog(@"Contacts selected");
@@ -210,7 +207,7 @@
             } else if (!granted)
             {
                 NSLog(@"No contact book access");
-                [self makeAlertWithTitle:@"No Address Book Access" message:@"Please allow access in your device's system settings menu"];
+                [GeneralUtilities makeAlertWithTitle:@"No Address Book Access" message:@"Please allow access in your device's system settings menu" viewController:self];
             }
         });
     } else {
@@ -271,7 +268,7 @@
             [self saveContactWithName:fullName number:[allNumbers lastObject]];
         }
     } else {
-        [self makeAlertWithTitle:@"Error" message:@"No phone number for contact"];
+        [GeneralUtilities makeAlertWithTitle:@"Error" message:@"No phone number for contact" viewController:self];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -281,26 +278,11 @@
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)makeAlertWithTitle:(NSString *)title message:(NSString *)message
-{
-    UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:title
-                                          message:message
-                                          preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:@"Dismiss"
-                                   style:UIAlertActionStyleCancel
-                                   handler:nil];
-    [alertController addAction:cancelAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
 - (void)swipeableTableViewCell:(ContactCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
     switch (index) {
         case 0:
         {
-            NSLog(@"Removing %li", cell.contactId);
+            NSLog(@"Removing %li", (long)cell.contactId);
             NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
             FPCContact *toRemove = [self.contacts objectAtIndex:cellIndexPath.item];
             
@@ -348,7 +330,7 @@
 - (void)updateCallsRemaining
 {
     NSInteger callsRemaining = [FPCManager sharedManager].currentUser.callsRemaining;
-    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining", callsRemaining] forState:UIControlStateNormal];
+    [self.callsRemainingButton setTitle:[NSString stringWithFormat:@"%li calls remaining",(long) callsRemaining] forState:UIControlStateNormal];
     [self.callsRemainingButton setBackgroundColor: callsRemaining > 0 ? [UIColor colorWithRed:73.0/255 green:161.0/255 blue:61.0/255 alpha:1] : [UIColor redColor]];
 }
 

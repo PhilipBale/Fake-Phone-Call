@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "FPCManager.h"
 #import "FPCUser.h"
+#import "GeneralUtilities.h"
 
 @interface RegisterViewController ()
 
@@ -18,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.emailTextField.delegate = self;
+    self.passwordTextField.delegate = self;
+    self.nameTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -119,6 +123,22 @@
 {
     self.registerButton.enabled = enabled;
     self.backBUtton.enabled = enabled;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == self.nameTextField || textField == self.emailTextField || textField == self.passwordTextField)
+    {
+        [GeneralUtilities animateView:self.view up:YES delta:150 duration:.5];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.nameTextField || textField == self.emailTextField || textField == self.passwordTextField)
+    {
+        [GeneralUtilities animateView:self.view up:NO delta:150 duration:.5];
+    }
 }
 
 @end

@@ -17,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    FPCUser *currentUser = [[FPCManager sharedManager] currentUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", currentUser.name];
+    self.emailLabel.text = [NSString stringWithFormat:@"Email: %@", currentUser.email];
+    
+    [self setupStringForLabel:self.nameLabel contentStart:6];
+    [self setupStringForLabel:self.emailLabel contentStart:7];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +37,15 @@
 
 - (IBAction)logoutButtonPressed:(id)sender {
     [[FPCManager sharedManager] logout];
+}
+
+- (void)setupStringForLabel:(UILabel *)label contentStart:(NSInteger)contentStart
+{
+    NSMutableAttributedString* attrStr =  [label.attributedText mutableCopy];
+    // for those calls we don't specify a range so it affects the whole string
+    
+    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, contentStart)];
+    [label setAttributedText:attrStr];
 }
 
 @end

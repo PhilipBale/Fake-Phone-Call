@@ -21,5 +21,6 @@
 - (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL))completion;
 - (NSString *)loadTokenFromKeychain;
 - (void)logout;
+- (void)saveContactWithName:(NSString *)name number:(NSString*)number completion:(void (^)(BOOL))completion;
 
 @end

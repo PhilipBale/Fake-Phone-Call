@@ -12,5 +12,7 @@
 @interface GeneralUtilities : NSObject
 
 + (NSMutableArray *) mutableArrayFromRealmResults:(RLMResults *)results;
++ (void)animateView:(UIView *)view up:(BOOL)up delta:(CGFloat)delta duration:(NSTimeInterval)duration;
++ (void)makeAlertWithTitle:(NSString *)title message:(NSString *)message viewController:(UIViewController *)viewController;
 
 @end

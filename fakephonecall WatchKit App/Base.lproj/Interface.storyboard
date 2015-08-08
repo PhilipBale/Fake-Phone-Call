@@ -68,8 +68,12 @@
             <objects>
                 <controller identifier="CallResult" title="dismiss" id="vcS-fP-xhc">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Success!" id="R0p-Uk-NGn"/>
-                        <label alignment="center" verticalAlignment="center" text="Call Placed!" textAlignment="left" id="Y4F-yD-liU">
+                        <label alignment="center" verticalAlignment="center" text="Placing Call!" id="R0p-Uk-NGn"/>
+                        <separator alignment="left" alpha="0.0" id="8K6-JU-WNx">
+                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </separator>
+                        <imageView alignment="center" image="phone small" id="UTK-yJ-B3i"/>
+                        <label alignment="center" verticalAlignment="center" text="check phone for comfirmation" textAlignment="center" numberOfLines="2" id="Y4F-yD-liU">
                             <color key="textColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                     </items>
