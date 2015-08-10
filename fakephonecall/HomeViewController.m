@@ -52,16 +52,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCallsRemaining) name:@"extensionCallPlaced" object:nil];
     
     [self updateContacts];
+    [self updateCallsRemaining];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self updateCallsRemaining];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    [self updateCallsRemaining];
     [self updateContacts];
     [self.tableView reloadData];
 }

@@ -25,6 +25,7 @@
 NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
 NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
 NSString * const kApiPlaceCallPath = API_PATH(place_call);
+NSString * const kApiPurchasePath = API_PATH(purchase_credits);
 
 @implementation HTTPManager
 

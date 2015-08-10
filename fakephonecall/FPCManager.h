@@ -22,5 +22,6 @@
 - (NSString *)loadTokenFromKeychain;
 - (void)logout;
 - (void)saveContactWithName:(NSString *)name number:(NSString*)number completion:(void (^)(BOOL))completion;
+- (void)processInAppPurchaseForProdId:(NSString *)prodId completion:(void (^)(BOOL))completion;
 
 @end

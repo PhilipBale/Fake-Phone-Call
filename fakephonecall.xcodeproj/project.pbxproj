@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		52A57627B1F1431E7AE3775F /* libPods-fakephonecallTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11A65B7460E251F96F9938 /* libPods-fakephonecallTests.a */; };
 		75442D343971BDD38160862A /* libPods-fakephonecall WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2092619C26EF5859B339B6B5 /* libPods-fakephonecall WatchKit Extension.a */; };
-		BCEB7300C998489F692006A3 /* libPods-fakephonecall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */; };
 		D41A5C5F1B76AA72005016E3 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5C5E1B76AA72005016E3 /* AddContactViewController.m */; };
 		D447DEA31B6B341E0088D931 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA21B6B341E0088D931 /* main.m */; };
 		D447DEA61B6B341E0088D931 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEA51B6B341E0088D931 /* AppDelegate.m */; };
@@ -17,11 +16,14 @@
 		D447DEAE1B6B341E0088D931 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447DEAD1B6B341E0088D931 /* Images.xcassets */; };
 		D447DEB11B6B341E0088D931 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D447DEAF1B6B341E0088D931 /* LaunchScreen.xib */; };
 		D447DEBD1B6B341E0088D931 /* fakephonecallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D447DEBC1B6B341E0088D931 /* fakephonecallTests.m */; };
+		D4B438E11B77234C00430D89 /* InAppPurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B438E01B77234C00430D89 /* InAppPurchasesViewController.m */; };
+		D4B438E31B782A6100430D89 /* libPods-fakephonecall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B438E21B782A6100430D89 /* libPods-fakephonecall.a */; };
+		D4B438E41B782A6A00430D89 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB7521B6B5DA6009D95C4 /* AddressBook.framework */; };
+		D4B438E51B782A7700430D89 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB7531B6B5DA6009D95C4 /* AddressBookUI.framework */; };
+		D4B438E61B782A8400430D89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B438DD1B77210900430D89 /* StoreKit.framework */; };
 		D4B988541B6D5B62008BFADD /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B988531B6D5B62008BFADD /* ContactCell.m */; };
 		D4DDB74E1B6B3C7F009D95C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB74D1B6B3C7F009D95C4 /* LoginViewController.m */; };
 		D4DDB7511B6B5837009D95C4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7501B6B5837009D95C4 /* HomeViewController.m */; };
-		D4DDB7541B6B5DA6009D95C4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB7521B6B5DA6009D95C4 /* AddressBook.framework */; };
-		D4DDB7551B6B5DA6009D95C4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB7531B6B5DA6009D95C4 /* AddressBookUI.framework */; };
 		D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7601B6D52EC009D95C4 /* FPCUser.m */; };
 		D4DDB7641B6D5414009D95C4 /* FPCContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7631B6D5414009D95C4 /* FPCContact.m */; };
 		D4DDB7671B6D5E23009D95C4 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDB7661B6D5E23009D95C4 /* GeneralUtilities.m */; };
@@ -102,6 +104,10 @@
 		D447DEB61B6B341E0088D931 /* fakephonecallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fakephonecallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D447DEBB1B6B341E0088D931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D447DEBC1B6B341E0088D931 /* fakephonecallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fakephonecallTests.m; sourceTree = "<group>"; };
+		D4B438DD1B77210900430D89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D4B438DF1B77234C00430D89 /* InAppPurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchasesViewController.h; sourceTree = "<group>"; };
+		D4B438E01B77234C00430D89 /* InAppPurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchasesViewController.m; sourceTree = "<group>"; };
+		D4B438E21B782A6100430D89 /* libPods-fakephonecall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-fakephonecall.a"; path = "Pods/../build/Release-iphoneos/libPods-fakephonecall.a"; sourceTree = "<group>"; };
 		D4B988521B6D5B62008BFADD /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
 		D4B988531B6D5B62008BFADD /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
 		D4DDB74C1B6B3C7F009D95C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -155,9 +161,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4DDB7541B6B5DA6009D95C4 /* AddressBook.framework in Frameworks */,
-				D4DDB7551B6B5DA6009D95C4 /* AddressBookUI.framework in Frameworks */,
-				BCEB7300C998489F692006A3 /* libPods-fakephonecall.a in Frameworks */,
+				D4B438E61B782A8400430D89 /* StoreKit.framework in Frameworks */,
+				D4B438E51B782A7700430D89 /* AddressBookUI.framework in Frameworks */,
+				D4B438E41B782A6A00430D89 /* AddressBook.framework in Frameworks */,
+				D4B438E31B782A6100430D89 /* libPods-fakephonecall.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +190,8 @@
 		B2A688BEEDAA5E712335D9CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4B438E21B782A6100430D89 /* libPods-fakephonecall.a */,
+				D4B438DD1B77210900430D89 /* StoreKit.framework */,
 				D4DDB7521B6B5DA6009D95C4 /* AddressBook.framework */,
 				D4DDB7531B6B5DA6009D95C4 /* AddressBookUI.framework */,
 				6890C07C8682D8AD8F25A8FD /* libPods-fakephonecall.a */,
@@ -305,6 +314,8 @@
 				D4DDB7AE1B6EDCD1009D95C4 /* RegisterViewController.m */,
 				D41A5C5D1B76AA72005016E3 /* AddContactViewController.h */,
 				D41A5C5E1B76AA72005016E3 /* AddContactViewController.m */,
+				D4B438DF1B77234C00430D89 /* InAppPurchasesViewController.h */,
+				D4B438E01B77234C00430D89 /* InAppPurchasesViewController.m */,
 			);
 			name = "VIew Controllers";
 			sourceTree = "<group>";
@@ -472,6 +483,9 @@
 						DevelopmentTeam = 9525LJ6YEJ;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -654,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D447DEA61B6B341E0088D931 /* AppDelegate.m in Sources */,
+				D4B438E11B77234C00430D89 /* InAppPurchasesViewController.m in Sources */,
 				D447DEA31B6B341E0088D931 /* main.m in Sources */,
 				D4DDB7611B6D52EC009D95C4 /* FPCUser.m in Sources */,
 				D4DDB74E1B6B3C7F009D95C4 /* LoginViewController.m in Sources */,
@@ -831,6 +846,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fakephonecall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -846,6 +865,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = fakephonecall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

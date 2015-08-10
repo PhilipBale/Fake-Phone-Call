@@ -186,6 +186,7 @@
                                 </state>
                                 <connections>
                                     <action selector="shopButtonPressed:" destination="Znr-br-aZm" eventType="touchUpInside" id="Mis-r8-SoX"/>
+                                    <segue destination="1rR-TU-sF4" kind="show" id="zoc-qg-cHg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -356,7 +357,120 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6L-Go-7lb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="1165"/>
+            <point key="canvasLocation" x="1066" y="1178"/>
+        </scene>
+        <!--Add Credits-->
+        <scene sceneID="hx4-ip-8gx">
+            <objects>
+                <viewController title="Add Credits" id="1rR-TU-sF4" customClass="InAppPurchasesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sZy-XY-hYV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Flg-dZ-rpH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Z4-Vb-s21">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttm-3O-TqN">
+                                <rect key="frame" x="46" y="94" width="228" height="62"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ttm-3O-TqN" secondAttribute="height" multiplier="11:3" id="xyt-pg-tME"/>
+                                </constraints>
+                                <state key="normal" title="7 credits | $0.99">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyTier1Pressed:" destination="1rR-TU-sF4" eventType="touchUpInside" id="Ajd-rh-vrb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nze-Dl-EaX">
+                                <rect key="frame" x="46" y="248" width="228" height="62"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nze-Dl-EaX" secondAttribute="height" multiplier="11:3" id="XM2-Uo-Nc0"/>
+                                </constraints>
+                                <state key="normal" title="50 credits | $4.99">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyTier3Pressed:" destination="1rR-TU-sF4" eventType="touchUpInside" id="dtp-UJ-mvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtT-Pz-vsJ">
+                                <rect key="frame" x="46" y="171" width="228" height="62"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.64313725489999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PtT-Pz-vsJ" secondAttribute="height" multiplier="11:3" id="by6-Pk-Wty"/>
+                                </constraints>
+                                <state key="normal" title="15 credits | $1.99">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="by6-Pk-Wty"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="buyTier2Pressed:" destination="1rR-TU-sF4" eventType="touchUpInside" id="Yew-Pf-LJM"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NXw-kX-2Yp">
+                                <rect key="frame" x="141" y="340" width="37" height="37"/>
+                                <color key="color" red="0.1450980392" green="0.4549019608" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyR-jo-HbL">
+                                <rect key="frame" x="56" y="331" width="208" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WbQ-50-tpk"/>
+                                </constraints>
+                                <state key="normal" title="TEST PURCHASE API">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testPurchaseAPI:" destination="1rR-TU-sF4" eventType="touchUpInside" id="lBV-RP-zI5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ttm-3O-TqN" firstAttribute="leading" secondItem="PtT-Pz-vsJ" secondAttribute="leading" id="1xR-kl-qa3"/>
+                            <constraint firstItem="ttm-3O-TqN" firstAttribute="height" secondItem="PtT-Pz-vsJ" secondAttribute="height" id="84y-Hg-Rqu"/>
+                            <constraint firstItem="ttm-3O-TqN" firstAttribute="trailing" secondItem="PtT-Pz-vsJ" secondAttribute="trailing" id="8Tg-S9-FeZ"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="trailing" secondItem="PtT-Pz-vsJ" secondAttribute="trailing" id="9kO-y3-rWK"/>
+                            <constraint firstItem="pyR-jo-HbL" firstAttribute="leading" secondItem="3Z4-Vb-s21" secondAttribute="leadingMargin" constant="40" id="C8u-tT-tGG"/>
+                            <constraint firstItem="ttm-3O-TqN" firstAttribute="leading" secondItem="3Z4-Vb-s21" secondAttribute="leadingMargin" constant="30" id="CB1-CY-jGy"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="leading" secondItem="PtT-Pz-vsJ" secondAttribute="leading" id="CJr-mp-IMU"/>
+                            <constraint firstItem="PtT-Pz-vsJ" firstAttribute="width" secondItem="PtT-Pz-vsJ" secondAttribute="height" multiplier="11:3" id="Ffq-2I-OlK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pyR-jo-HbL" secondAttribute="trailing" constant="40" id="Gan-NQ-kf0"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="width" secondItem="nze-Dl-EaX" secondAttribute="height" multiplier="11:3" id="GcD-Pb-URL"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="height" secondItem="PtT-Pz-vsJ" secondAttribute="height" id="K8U-eg-vWv"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="top" secondItem="PtT-Pz-vsJ" secondAttribute="bottom" constant="15" id="aiS-tR-s06"/>
+                            <constraint firstAttribute="centerX" secondItem="NXw-kX-2Yp" secondAttribute="centerX" id="dIJ-b8-WeV"/>
+                            <constraint firstItem="nze-Dl-EaX" firstAttribute="width" secondItem="nze-Dl-EaX" secondAttribute="height" multiplier="11:3" id="djR-RT-KOo"/>
+                            <constraint firstItem="ttm-3O-TqN" firstAttribute="top" secondItem="sZy-XY-hYV" secondAttribute="bottom" constant="30" id="goj-Hx-EIo"/>
+                            <constraint firstItem="PtT-Pz-vsJ" firstAttribute="top" secondItem="ttm-3O-TqN" secondAttribute="bottom" constant="15" id="sxN-6M-SZd"/>
+                            <constraint firstItem="NXw-kX-2Yp" firstAttribute="top" secondItem="nze-Dl-EaX" secondAttribute="bottom" constant="30" id="uFF-tJ-YL9"/>
+                            <constraint firstItem="pyR-jo-HbL" firstAttribute="top" secondItem="nze-Dl-EaX" secondAttribute="bottom" constant="21" id="yEs-Lr-7KX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ttm-3O-TqN" secondAttribute="trailing" constant="30" id="zgo-LT-jOo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GcD-Pb-URL"/>
+                                <exclude reference="djR-RT-KOo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="NXw-kX-2Yp" id="Khv-CD-X7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itE-jM-ckQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="1178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xjk-4a-bWb">

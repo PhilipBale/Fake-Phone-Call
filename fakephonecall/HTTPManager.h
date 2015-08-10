@@ -12,6 +12,7 @@
 extern NSString * const kApiLoginOrRegisterPath;
 extern NSString * const kApiPlaceCallPath;
 extern NSString * const kApiLoginWithTokenPath;
+extern NSString * const kApiPurchasePath;
 
 @interface HTTPManager : AFHTTPRequestOperationManager
 
